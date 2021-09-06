@@ -58,7 +58,7 @@ To implement Fed-GBM on Dask cluster, complete the following steps:
 2. On EC2 instance, register the Dask client to the distributed Dask scheduler and build the connection
 3. Setting up Network Load Balancer to monitor the Dask cluster, refering to official instruction on https://aws.amazon.com/blogs/machine-learning/machine-learning-on-distributed-dask-using-amazon-sagemaker-and-aws-fargate/
 
-The FedBooster.py script provides booster class and main training workflow of Fed-GBM. It allocates the training dataset across the workers from Dask Fargate cluster and uses Seq2point paradigm for NILM data (pairs of multiple samples aggregate data and 1 sample midpoint ground truth).  The TrainBooster_redd.py and the TrainBooster_refit.py are the entry point for the training phase and provided as examples.  Once the training is completed,  the trained GBDT model will be saved into the folder you have selected. The SingleBooster.py is an alternative to build a NILM model without collaborative training.
+The FedBooster.py script provides booster class and main training workflow of Fed-GBM. It allocates the training dataset across the workers from Dask Fargate cluster and uses Seq2point paradigm for NILM data (pairs of multiple samples aggregate data and 1 sample midpoint ground truth).  Both TrainBooster_redd.py and TrainBooster_refit.py are the entry points for the training phase and provided as examples. Once the training is completed, the trained GBDT model will be saved into the folder you have selected. The SingleBooster.py is an alternative to build a NILM model without collaborative training.
 
 Training default parameters:
 
